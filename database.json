@@ -1,0 +1,12 @@
+[
+  {
+    "gender": "female",
+    "age": "21-30 år",
+    "answers": [
+      true,
+      false,
+      true
+    ],
+    "id": 0
+  }
+]
