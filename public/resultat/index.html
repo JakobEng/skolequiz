@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1024">
+		<title>Example 4 - Animated Bar Chart via CSS Transitions (WebKit Only)</title>
+		<link rel="stylesheet" href="/resultat/main.css">
+		<link rel="stylesheet" href="/resultat/barColor.css">
+	</head>
+	<body>
+		<div class="toggles">
+			<p><a href="./diagramBar1.html#" id="reset-graph-button">Reset graph</a><a href="https://skolequize.herokuapp.com/" id="return-button">Tilbage til quize</a>Shriv noget tekst her hvi der mangler noget</p>
+		</div>
+		<div id="wrapper">
+			<div class="chart">
+				<h2>Population of endangered species from 2012 – 2016</h2>
+				<div id="figure">
+					<h4>Population in thousands</h4>
+					<ul class="legend">
+						<li><span class="icon fig0"></span>Carbon Tiger</li>
+						<li><span class="icon fig1"></span>Blue Monkey</li>
+						<li><span class="icon fig2"></span>Tanned Zombie</li>
+					</ul>
+					<div class="graph">
+						<ul class="x-axis">
+							<li><span>kvinder - mænd</span></li>
+							<li><span>2013</span></li>
+							<li><span>2014</span></li>
+							<li><span>2015</span></li>
+							<li><span>2016</span></li>
+						</ul><ul class="y-axis">
+							<li><span>100%</span></li>
+							<li><span>75%</span></li>
+							<li><span>50%</span></li>
+							<li><span>25%</span></li>
+							<li><span>0%</span></li>
+						</ul>
+						<div class="bars">
+							<div class="bar-group">
+								<div class="bar fig3" style="height: 71%; transition: all 0.8s ease-out;">
+									<span>4080</span>
+								</div>
+								<div class="bar fig4" style="height: 51%; transition: all 0.8s ease-out;">
+									<span>5680</span>
+								</div>
+							</div>
+							<div class="bar-group">
+								<div class="bar fig3" style="height: 76%; transition: all 0.8s ease-out;">
+									<span>6080</span>
+								</div>
+								<div class="bar fig4" style="height: 86%; transition: all 0.8s ease-out;">
+									<span>6880</span>
+								</div>
+							</div>
+							<div class="bar-group">
+								<div class="bar fig0" style="height: 78%; transition: all 0.8s ease-out;">
+									<span>6240</span>
+								</div>
+								<div class="bar fig1" style="height: 72%; transition: all 0.8s ease-out;">
+									<span>5760</span>
+								</div>
+								<div class="bar fig2" style="height: 36%; transition: all 0.8s ease-out;">
+									<span>2880</span>
+								</div>
+							</div>
+							<div class="bar-group">
+								<div class="bar fig3" style="height: 44%; transition: all 0.8s ease-out;">
+									<span>3520</span>
+								</div>
+								<div class="bar fig4" style="height: 64%; transition: all 0.8s ease-out;">
+									<span>5120</span>
+								</div>
+							</div>
+							<div class="bar-group">
+								<div class="bar fig4" style="height: 28%; transition: all 0.8s ease-out;">
+									<span>2240</span>
+								</div>
+								<div class="bar fig3" style="height: 33%; transition: all 0.8s ease-out;">
+									<span>2640</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- JavaScript at the bottom for fast page loading -->
+
+		<!-- Grab jQuery from Google -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<!-- Example JavaScript -->
+		<script src="/resultat/main.js"></script>
+
+</body></html>

@@ -44,12 +44,12 @@ app.post('/api', function(req, res) {
     } catch(err) {
       onlyBool = false
     }
-    
-    if((gender === 'male' || gender === 'female') && (age === '20 år eller yngre' || age === '21-30 år' || age === '31-40 år' || age === '41-50 år' || age === '51 år eller ældre')
+
+    if((gender === 'male' || gender === 'female') && (age === '35 år eller yngre' || age === '36-45 år' || age === '46 år eller ældre')
       && onlyBool && answers.length > 1) {
     } else return res.status(400).json({"error": "not valid data"})
     // ...til her
-    body.id = data.length
+    body.id = data.length + 1
     data.push(body)
 
 
@@ -60,6 +60,11 @@ app.post('/api', function(req, res) {
       res.json(data)
     })
   })
+})
+
+
+app.get('/resultat', function(req, res) {
+  res.sendFile(__dirname + '/public/resultat/index.html')
 })
 
 
