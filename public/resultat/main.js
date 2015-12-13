@@ -35,7 +35,8 @@ $(document).ready(function() {
 	for(var i = 0; i < bar.length; i++) {
 		bar[i] = $(bar[i]).attr('style')
 		var res = bar[i].substring(8, 11)
-		$('.bar').attr('style', bar[i])
+		bar[i] = bar[i].replace(res, '100%')
+		$($('.bar')[i]).attr('style', bar[i])
 	}
 
 });
