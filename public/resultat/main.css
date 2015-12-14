@@ -26,33 +26,6 @@ a {
 	color: #333;
 }
 
-/* Table */
-#data-table {
-	border: none; /* Turn off all borders */
-	border-top: 1px solid #ccc;
-	width: 540px;
-}
-#data-table caption {
-	color: #545454;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 20px;
-	margin: 0 0 20px 0;
-	padding: 0;
-	text-align: center;
-}
-#data-table thead {
-	background: #f0f0f0;
-}
-#data-table th,
-#data-table td {
-	border: none; /* Turn off all borders */
-	border-bottom: 1px solid #ccc;
-	margin: 0;
-	padding: 10px;
-	text-align: left;
-}
-
 /* Toggle */
 .toggles {
 	background: #ebebeb;
@@ -188,6 +161,7 @@ a {
 	position: absolute;
 	text-align: center;
 	width: 24px;
+	transition: all 0.8s ease-out;
 }
 .bar.fig0 {
 	left: 0;

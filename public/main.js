@@ -51,13 +51,16 @@
             answers: []
           }
           for(var i = 0; i < $('.guess').length; i++) {
-            postData.answers.push($($('.guess')[i]).attr('value'))
+            postData.answers.push($($('.guess')[i]).attr('value') === "true")
           }
+          postData = JSON.stringify(postData)
           console.log(postData)
           $.ajax({
             type: "POST",
             url:'/api',
             data: postData,
+            contentType: "application/json",
+            dataType: "json",
             success: function() {
               $('#finish').html('og sendt')
             },

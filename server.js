@@ -48,7 +48,7 @@ app.post('/api', function(req, res) {
 
     if(gender === 'male' || gender === 'female' ) {
       if(age === '35 år eller yngre' || age === '36-45 år' || age === '46 år eller ældre') {
-        if(onlyBool && answers.length > 1) {
+        if(onlyBool && answers.length === 10) {
           // data is valid
         } else {
           return res.status(400).json({"error": "not valid answers"})
@@ -64,7 +64,7 @@ app.post('/api', function(req, res) {
     data.push(body)
 
 
-    fs.writeFile('./database.json', JSON.stringify(data, null, 2), 'utf8', function(err) {
+    fs.writeFile('./database.json', JSON.stringify(data), 'utf8', function(err) {
       if(err) {
         return res.json({"error": "Could not post data"})
       }
