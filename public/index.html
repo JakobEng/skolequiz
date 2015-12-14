@@ -1,15 +1,144 @@
 <!DOCTYPE html>
-<html lang="da">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <title>Skole Quize</title>
+    <link rel='stylesheet' href='/main.css'/>
   </head>
   <body>
-    <h1>Velkommem til denne quize</h1>
+    <div class="container .col-md-12">
+      <div id="welcome">
+        <h1>Velkommen til denne lille quize</h1>
+        <p>Her skal du svare på nogle spørgsmål om det du lige har set i lokalet. Så hvis du vil have de bedste
+          resulteter så vær sikker på du har været over alt.
+        </p>
+        <p>tage kunne denne quize en gang og lad venligt andre selv løse opgaverne. Når du har udfylt dine infomationer klik start</p>
+        <div id="question1">
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="gender">Køn</label>
+              <select class="form-control" id="gender">
+                <option value="female">kvinde</option>
+                <option value="male">mand</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Alder</label>
+              <select class="form-control" id="age">
+                <option value="35 år eller yngre">35 år eller yngre</option>
+                <option value="36-44 år">36-44 år</option>
+                <option value="45 år eller ældre">45 år eller ældre</option>
+              </select>
+            </div>
+            <button class="btn btn-default" id="start">Start</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="questions" id="question2">
+        <h2>Første spørgsmål: Hvad er Jutlandia</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="false">En jungle</div>
+        <div class="answer" value="false">Et exotisk dyr</div>
+        <div class="answer" value="true">Et hospitalsskib</div>
+        <div class="answer" value="false">Et tøj mærke</div>
+      </div>
+
+      <div class="questions" id="question3">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakrigen</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question4">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakrigen</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question5">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakrigen</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question6">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question7">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question8">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question9">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question10">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question11">
+        <h2>Andet spørgsmål: Hvad kom der ud af koreakriga</h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <div class="answer" value="true">Våbenhvile</div>
+        <div class="answer" value="false">En ny stat</div>
+        <div class="answer" value="false">Ebola</div>
+        <div class="answer" value="false">Nye underjordiske groter</div>
+      </div>
+
+      <div class="questions" id="question12">
+        <h2>Quizen er slut <span id="finish">...</span></h2>
+        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+      </div>
+
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>

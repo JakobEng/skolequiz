@@ -27,9 +27,10 @@ $(document).ready(function() {
 	}
 	json.forEach(function(answer) {
 		if(answer.gender === 'male' && answer.age === '35 år eller yngre') {
-
+			answers.male.ageY.push(answer.answers)
 		}
 	})
+	console.log(answers.male.ageY)
 
 	var bar = $('.bar')
 	for(var i = 0; i < bar.length; i++) {

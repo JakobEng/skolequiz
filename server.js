@@ -26,6 +26,7 @@ app.get('/api', function(req, res) {
 
 app.post('/api', function(req, res) {
   let body = req.body
+  console.log(body)
   fs.readFile('./database.json', 'utf8', function(err, data) {
     if(err) {
       return res.json({"error": "error geting data from database"})
@@ -45,9 +46,19 @@ app.post('/api', function(req, res) {
       onlyBool = false
     }
 
-    if((gender === 'male' || gender === 'female') && (age === '35 år eller yngre' || age === '36-45 år' || age === '46 år eller ældre')
-      && onlyBool && answers.length > 1) {
-    } else return res.status(400).json({"error": "not valid data"})
+    if(gender === 'male' || gender === 'female' ) {
+      if(age === '35 år eller yngre' || age === '36-45 år' || age === '46 år eller ældre') {
+        if(onlyBool && answers.length > 1) {
+          // data is valid
+        } else {
+          return res.status(400).json({"error": "not valid answers"})
+        }
+      } else {
+        return res.status(400).json({"error": "not valid age"})
+      }
+    } else {
+      return res.status(400).json({"error": "not valid gender"})
+    }
     // ...til her
     body.id = data.length + 1
     data.push(body)

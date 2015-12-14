@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#welcome {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5
+}
+
+#welcome h1 {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.questions {
+  margin-top: 10px;
+  display:none;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.answer {
+  padding: 10px;
+  margin-top:10px;
+  border:1px solid #dddddd;
+  background-color: #eeeeee;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 1em;
+}
+
+.guess {
+  background-color: #34495e;
+}
