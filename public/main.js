@@ -1,13 +1,5 @@
 (function() {
 
-  // HUSK dette trick
-  /*
-  for(var i = 0; i < $('.answer').length; i++) {
-    console.log($($('.answer')[i]).attr('value'))
-  }
-  den finder aller der har en klasse "answer" og giver verdien i "value" tilbage, som skal være true eller false
-*/
-
   var question = {
     init: function() {
       this.cacheDom()
@@ -50,9 +42,13 @@
             age: $('#age').val(),
             answers: []
           }
+          var trues = 0
           for(var i = 0; i < $('.guess').length; i++) {
-            postData.answers.push($($('.guess')[i]).attr('value') === "true")
+            var value = $($('.guess')[i]).attr('value') === "true";
+            postData.answers.push(value)
+            if(value === true) trues += 1
           }
+          $('#rigtige').html(trues)
           postData = JSON.stringify(postData)
           console.log(postData)
           $.ajax({
@@ -73,23 +69,14 @@
           $('.guess').removeClass('guess')
           setTimeout(function() {
             $('#question' + parent).hide('drop', {direction: 'right'}, 500)
-          }, 10000)
+          }, 20000)
           setTimeout(function() {
             $('#welcome').show('drop', {direction: 'left'}, 500)
-          }, 10501)
+          }, 20501)
         }
       })
     }
   };
 
   question.init();
-
-//  var answer = {};
-//  $('#submit').click(function() {
-//    const gender = $('#gender').val()
-//    const age = $('#age').val()
-//
-//    answer.gender = gender
-//    answer.age = age
-//  })
 })()

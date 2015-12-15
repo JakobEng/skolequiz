@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
 }
@@ -9,10 +8,11 @@ a {
 }
 
 #welcome {
+  margin-top: 5px;
   width: 100%;
-  padding: 20px;
+  padding:10px 20px;
   border: 1px solid #cccccc;
-  border-radius: 5
+  border-radius: 5px;
 }
 
 #welcome h1 {

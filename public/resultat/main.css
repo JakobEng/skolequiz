@@ -86,6 +86,7 @@ a {
 	text-align: left;
 	width: 540px;
 }
+
 .legend li {
 	display: block;
 	float: left;
@@ -94,6 +95,11 @@ a {
 	padding: 10px 30px;
 	width: 120px;
 }
+
+.legend li:first-child {
+	margin-left: 120px;
+}
+
 .legend span.icon {
 	background-position: 50% 0;
 	border-radius: 2px;

@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <title>Skole Quize</title>
     <link rel='stylesheet' href='/main.css'/>
+    <style media="only screen and (min-width:768px)">
+    body {
+      padding-top: 20px;
+    }
+    </style>
   </head>
   <body>
-    <div class="container .col-md-12">
+    <div class="container .col-xs-12">
       <div id="welcome">
         <h1>Velkommen til denne lille quiz</h1>
         <p>Her skal du svare på nogle spørgsmål om det du lige har set i lokalet. Så hvis du vil have de bedste
@@ -130,7 +136,7 @@
 
       <div class="questions" id="question12">
         <h2>Quizen er slut <span id="finish">...</span></h2>
-        <p>Her skal der stå et spørgsmål. Når du kliker på et svar går den vidre</p>
+        <p>Du fik i alt <b><span id="rigtige"></span>/10 rigtige</b>. Der går <b>20 sek</b> før du kom tilbage til startside.</p>
       </div>
 
     </div>

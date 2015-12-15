@@ -47,7 +47,7 @@ app.post('/api', function(req, res) {
     }
 
     if(gender === 'male' || gender === 'female' ) {
-      if(age === '35 år eller yngre' || age === '36-45 år' || age === '46 år eller ældre') {
+      if(age === '35 år eller yngre' || age === '36-44 år' || age === '45 år eller ældre') {
         if(onlyBool && answers.length === 10) {
           // data is valid
         } else {
