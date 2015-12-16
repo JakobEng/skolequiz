@@ -12,6 +12,7 @@
       this.$questions = $('.questions')
       this.$question1 = $('#questions')
       this.$answer = $('.answer')
+      this.clickAble = true;
     },
     buttonClick: function() {
       var self = this
@@ -27,52 +28,56 @@
     answerClick: function() {
       var self = this
       this.$answer.click(function() {
-        var parent = $(this).parent().attr('id')
-        console.log(parent)
-        $(this).addClass('guess')
-        $('#' + parent).hide('drop', {direction: 'left'}, 500)
-        parent = Number(parent.substring(8, parent.length)) + 1
-        setTimeout(function() {
-          $('#question' + parent).show('drop', {direction: 'right'}, 500)
-        }, 501)
-        if(parent === 12) {
+        if(self.clickAble) {
+          self.clickAble = false
+          var parent = $(this).parent().attr('id')
+          console.log(parent)
+          $(this).addClass('guess')
+          $('#' + parent).hide('drop', {direction: 'left'}, 500)
+          parent = Number(parent.substring(8, parent.length)) + 1
+          setTimeout(function() {
+            $('#question' + parent).show('drop', {direction: 'right'}, 500)
+            self.clickAble = true
+          }, 501)
+          if(parent === 12) {
 
-          var postData = {
-            gender: $('#gender').val(),
-            age: $('#age').val(),
-            answers: []
-          }
-          var trues = 0
-          for(var i = 0; i < $('.guess').length; i++) {
-            var value = $($('.guess')[i]).attr('value') === "true";
-            postData.answers.push(value)
-            if(value === true) trues += 1
-          }
-          $('#rigtige').html(trues)
-          postData = JSON.stringify(postData)
-          console.log(postData)
-          $.ajax({
-            type: "POST",
-            url:'/api',
-            data: postData,
-            contentType: "application/json",
-            dataType: "json",
-            success: function() {
-              $('#finish').html('og sendt')
-            },
-            error: function(err) {
-              $('#finish').html('og der skete en fejl sende den')
-              console.log(err)
+            var postData = {
+              gender: $('#gender').val(),
+              age: $('#age').val(),
+              answers: []
             }
-          })
+            var trues = 0
+            for(var i = 0; i < $('.guess').length; i++) {
+              var value = $($('.guess')[i]).attr('value') === "true";
+              postData.answers.push(value)
+              if(value === true) trues += 1
+            }
+            $('#rigtige').html(trues)
+            postData = JSON.stringify(postData)
+            console.log(postData)
+            $.ajax({
+              type: "POST",
+              url:'/api',
+              data: postData,
+              contentType: "application/json",
+              dataType: "json",
+              success: function() {
+                $('#finish').html('og sendt')
+              },
+              error: function(err) {
+                $('#finish').html('og der skete en fejl sende den')
+                console.log(err)
+              }
+            })
 
-          $('.guess').removeClass('guess')
-          setTimeout(function() {
-            $('#question' + parent).hide('drop', {direction: 'right'}, 500)
-          }, 20000)
-          setTimeout(function() {
-            $('#welcome').show('drop', {direction: 'left'}, 500)
-          }, 20501)
+            $('.guess').removeClass('guess')
+            setTimeout(function() {
+              $('#question' + parent).hide('drop', {direction: 'right'}, 500)
+            }, 15000)
+            setTimeout(function() {
+              $('#welcome').show('drop', {direction: 'left'}, 500)
+            }, 15501)
+          }
         }
       })
     }
