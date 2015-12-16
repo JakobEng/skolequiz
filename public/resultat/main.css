@@ -87,6 +87,10 @@ a {
 	width: 540px;
 }
 
+.second {
+	bottom: -30px;
+}
+
 .legend li {
 	display: block;
 	float: left;
@@ -96,7 +100,7 @@ a {
 	width: 120px;
 }
 
-.legend li:first-child {
+.legend.first li:first-child {
 	margin-left: 120px;
 }
 

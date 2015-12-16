@@ -31,7 +31,6 @@
         if(self.clickAble) {
           self.clickAble = false
           var parent = $(this).parent().attr('id')
-          console.log(parent)
           $(this).addClass('guess')
           $('#' + parent).hide('drop', {direction: 'left'}, 500)
           parent = Number(parent.substring(8, parent.length)) + 1

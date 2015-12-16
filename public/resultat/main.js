@@ -118,7 +118,7 @@ function start(json) {
 
 	setBar(7, answers.female.ageM)
 	setBar(8, answers.male.ageM)
-	setBar(9, answers.female.ageE)
+	setBar(9, answers.male.ageE)
 	setBar(10, answers.female.ageE)
 
 	function changeAnswers(obj) {

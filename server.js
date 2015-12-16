@@ -26,7 +26,6 @@ app.get('/api', function(req, res) {
 
 app.post('/api', function(req, res) {
   let body = req.body
-  console.log(body)
   fs.readFile('./database.json', 'utf8', function(err, data) {
     if(err) {
       return res.json({"error": "error geting data from database"})
