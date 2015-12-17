@@ -63,7 +63,7 @@ app.post('/api', function(req, res) {
     data.push(body)
 
 
-    fs.writeFile('./database.json', JSON.stringify(data), 'utf8', function(err) {
+    fs.writeFile('./database.json', JSON.stringify(data, null, 2), 'utf8', function(err) {
       if(err) {
         return res.json({"error": "Could not post data"})
       }

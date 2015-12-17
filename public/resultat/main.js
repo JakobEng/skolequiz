@@ -142,4 +142,6 @@ function start(json) {
 		$($('.bar')[i]).attr('style', 'height: ' + value +'%;')
 		$($('.bar')[i]).html('<span>' + value +'%</span>')
 	}
+
+	$('#users').html(json.length + ' har svaret på quizen')
 }
