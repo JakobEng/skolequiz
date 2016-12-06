@@ -1,5 +1,5 @@
 (function() {
-
+  var socket = io()
   var question = {
     init: function() {
       this.cacheDom()
@@ -54,6 +54,7 @@
             $('#rigtige').html(trues)
             postData = JSON.stringify(postData)
             console.log(postData)
+            socket.emit('svar mode', postData)
             $.ajax({
               type: "POST",
               url:'/api',
