@@ -10,17 +10,40 @@ const io = require('socket.io')(http)
 
 const PORT = process.env.PORT || 3000
 
-let database = require('./database.json')
-
 app.use(express.static('./public'))
 app.use(bodyParser.json())
 
 io.on('connection', socket => {
   console.log('a user connected')
-  socket.emit('update mode', database)
-  socket.on('post mode', (body) => {
+  fs.readFile('./data/mode.json', 'utf8', function(err, database) {
+    if(err) {
+      return res.json({"error": "error geting data from database"})
+    }
 
-    // Tjekker om data er gyldig fra her...
+    socket.emit('update mode', JSON.parse(database))
+  })
+
+  fs.readFile('./data/politik.json', 'utf8', function(err, database) {
+    if(err) {
+      return res.json({"error": "error geting data from database"})
+    }
+
+    socket.emit('update politik', JSON.parse(database))
+  })
+
+  socket.on('post mode', (body) => {
+    thing(body, 'mode')
+  })
+
+  socket.on('post politik', (body) => {
+    thing(body, 'politik')
+  })
+})
+
+function thing(body, file) {
+  new Promise((resolve,reject) => {
+    body = JSON.parse(body)
+
     let gender = body.gender
     let age = body.age
     let answers = body.answers
@@ -34,88 +57,36 @@ io.on('connection', socket => {
     }
 
     if(!(gender === 'male' || gender === 'female') ) {
-      return res.status(400).json({"error": "not valid gender"})
+      return reject('error 1')
     }
 
     if(!(age === '35 år eller yngre' || age === '36-44 år' || age === '45 år eller ældre')) {
-      return res.status(400).json({"error": "not valid age"})
+      return reject('error 2')
     }
 
     if(!(onlyBool && answers.length === 10)) {
-      return res.status(400).json({"error": "not valid answers"})
+      return reject('error 3')
     }
-    // ...til her
-    database = JSON.parse(database)
-    body.id = database.length + 1
-    database.push(body)
-    database = JSON.strinify(database)
-    io.emit('update mode', database)
-
-  })
-})
+    resolve(body)
 
 
-app.get('/api', function(req, res) {
-  fs.readFile('./database.json', 'utf8', function(err, data) {
-    if(err) {
-      return res.json({"error": "error geting data from database"})
-    }
-
-    res.json(JSON.parse(data))
-  })
-})
-
-
-// app.post('/api', function(req, res) {
-//   let body = req.body
-//   fs.readFile('./database.json', 'utf8', function(err, data) {
-//     if(err) {
-//       return res.json({"error": "error geting data from database"})
-//     }
-//     data = JSON.parse(data)
-//
-//     // Tjekker om data er gyldig fra her...
-//     let gender = body.gender
-//     let age = body.age
-//     let answers = body.answers
-//     let onlyBool;
-//
-//     try {
-//       answers.forEach((answer) => {if(typeof answer !== 'boolean') onlyBool = false})
-//       if(typeof onlyBool === 'undefined') {onlyBool = true}
-//     } catch(err) {
-//       onlyBool = false
-//     }
-//
-//     if(!(gender === 'male' || gender === 'female') ) {
-//       return res.status(400).json({"error": "not valid gender"})
-//     }
-//
-//     if(!(age === '35 år eller yngre' || age === '36-44 år' || age === '45 år eller ældre')) {
-//       return res.status(400).json({"error": "not valid age"})
-//     }
-//
-//     if(!(onlyBool && answers.length === 10)) {
-//       return res.status(400).json({"error": "not valid answers"})
-//     }
-//     // ...til her
-//     body.id = data.length + 1
-//     data.push(body)
-//
-//
-//     fs.writeFile('./database.json', JSON.stringify(data, null, 2), 'utf8', function(err) {
-//       if(err) {
-//         return res.json({"error": "Could not post data"})
-//       }
-//       res.json(data)
-//     })
-//   })
-// })
-
-
-app.get('/resultat', function(req, res) {
-  res.sendFile(__dirname + '/public/resultat/index.html')
-})
+  }).then(body => {
+    return new Promise((resolve,reject) => {
+      fs.readFile(`./data/${file}.json`, 'utf8', (err, database) => {
+        if(err) reject(err)
+        console.log(database)
+        database = JSON.parse(database)
+        body.id = database.length + 1
+        database.push(body)
+        io.emit(`update ${file}`, database)
+        fs.writeFile(`./data/${file}.json`, JSON.stringify(database, null, 2), 'utf8', (err) => {
+          if(err) reject(err)
+          resolve()
+        })
+      })
+    })
+  }).catch(console.error)
+}
 
 
 http.listen(PORT, function() {

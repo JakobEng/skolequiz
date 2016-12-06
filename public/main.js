@@ -54,21 +54,7 @@
             $('#rigtige').html(trues)
             postData = JSON.stringify(postData)
             console.log(postData)
-            socket.emit('svar mode', postData)
-            $.ajax({
-              type: "POST",
-              url:'/api',
-              data: postData,
-              contentType: "application/json",
-              dataType: "json",
-              success: function() {
-                $('#finish').html('og sendt')
-              },
-              error: function(err) {
-                $('#finish').html('og der skete en fejl sende den')
-                console.log(err)
-              }
-            })
+            socket.emit('post mode', postData)
 
             $('.guess').removeClass('guess')
             setTimeout(function() {
