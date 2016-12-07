@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "gender": "male",
+    "age": "35 år eller yngre",
+    "answers": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "id": 1
+  }
+]

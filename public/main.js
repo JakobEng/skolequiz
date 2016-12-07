@@ -54,7 +54,7 @@
             $('#rigtige').html(trues)
             postData = JSON.stringify(postData)
             console.log(postData)
-            socket.emit('post mode', postData)
+            socket.emit('post ' + file, postData)
 
             $('.guess').removeClass('guess')
             setTimeout(function() {

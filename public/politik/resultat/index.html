@@ -10,11 +10,11 @@
 	</head>
 	<body>
 		<div class="toggles">
-			<p><a href="https://skolequiz.herokuapp.com/" id="return-button">Tilbage til quize</a></p>
+			<p><a href="/politik" id="return-button">Tilbage til quize</a></p>
 		</div>
 		<div id="wrapper">
 			<div class="chart">
-				<h2>Svar på spørgsmål om 1950'erne</h2>
+				<h2>Svar på spørgsmål om politiken i 1960'erne</h2>
 				<div id="figure">
 					<h4 id="users"></h4>
 					<ul class="legend first">
@@ -93,6 +93,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
+		<script src="../vari.js" charset="utf-8"></script>
 		<script src="/resultat/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				let socket = io()
+
+				socket.on('update ' + file, results => {
+					console.log(results)
+					start(results)
+				})
+			})
+		</script>
 
 </body></html>

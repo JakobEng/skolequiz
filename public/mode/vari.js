@@ -1,1 +1,1 @@
-var file = 'mode'
+const file = 'mode'

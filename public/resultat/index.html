@@ -10,11 +10,11 @@
 	</head>
 	<body>
 		<div class="toggles">
-			<p><a href="https://skolequiz.herokuapp.com/" id="return-button">Tilbage til quize</a></p>
+			<p><a href="/mode/resultat" id="return-button">Til mode resultater</a><a href="/politik/resultat" id="return-button" style="float:right;">Til politik resultater</a></p>
 		</div>
 		<div id="wrapper">
 			<div class="chart">
-				<h2>Svar på spørgsmål om 1950'erne</h2>
+				<h2>Samlede svar fra alle klasser om 1960'erne</h2>
 				<div id="figure">
 					<h4 id="users"></h4>
 					<ul class="legend first">
@@ -94,5 +94,29 @@
 		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
 		<script src="/resultat/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				let socket = io()
+
+				let mode = []
+				let politik = []
+				let combined = politik.concat(mode)
+
+				socket.on('update mode', results => {
+					mode = results
+					combined = mode.concat(politik)
+					console.log(combined)
+					start(combined)
+				})
+
+				socket.on('update politik', results => {
+					politik = results
+					combined = politik.concat(mode)
+					console.log(combined)
+					start(combined)
+				})
+			})
+		</script>
 
 </body></html>
