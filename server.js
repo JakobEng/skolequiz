@@ -40,6 +40,28 @@ io.on('connection', socket => {
   })
 })
 
+;(function repeat() {
+  setTimeout(() => {
+    repeat()
+  }, 1000)
+  fs.readFile('./data/timer.json', 'utf8', (err,timer) => {
+    if(err) throw err
+
+    timer = JSON.parse(timer)
+
+    io.emit('timer', timer.time)
+
+    console.log(timer.start)
+
+    if(timer.start && timer.time > 0) {
+      timer.time -= 1
+      fs.writeFile('./data/timer.json', JSON.stringify(timer,null,2), 'utf8', err => {
+        if(err) throw err
+      })
+    }
+  })
+})()
+
 function thing(body, file) {
   new Promise((resolve,reject) => {
     body = JSON.parse(body)

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class="toggles">
-			<p><a href="/mode/resultat" id="return-button">Til mode resultater</a><a href="/politik/resultat" id="return-button" style="float:right;">Til politik resultater</a></p>
+			<p><a href="/mode/resultat" id="return-button">Til mode resultater</a><a href="/politik/resultat" id="return-button" style="float:right;½">Til politik resultater</a></p>
 		</div>
 		<div id="wrapper">
 			<div class="chart">
@@ -89,15 +89,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="time" style="position: fixed; bottom:0;">
+			<h1 class="time-left">--:--</h1>
+			<h3>Den tid du har tilbage til at kige rundt</h3>
+		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
 		<script src="/resultat/main.js"></script>
 		<script type="text/javascript">
+		let socket = io()
 			$(document).ready(function() {
-
-				let socket = io()
 
 				let mode = []
 				let politik = []
@@ -118,5 +121,6 @@
 				})
 			})
 		</script>
+		<script src="/resultat/timer.js" charset="utf-8"></script>
 
 </body></html>
