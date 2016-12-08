@@ -51,8 +51,6 @@ io.on('connection', socket => {
 
     io.emit('timer', timer.time)
 
-    console.log(timer.start)
-
     if(timer.start && timer.time > 0) {
       timer.time -= 1
       fs.writeFile('./data/timer.json', JSON.stringify(timer,null,2), 'utf8', err => {
