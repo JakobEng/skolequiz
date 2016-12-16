@@ -8,7 +8,7 @@ let app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 80
 
 app.use(express.static('./public'))
 app.use(bodyParser.json())
@@ -110,5 +110,5 @@ function thing(body, file) {
 
 
 http.listen(PORT, function() {
-  console.log('Server started on PORT 3000')
+  console.log('Server started on PORT ' + PORT)
 })

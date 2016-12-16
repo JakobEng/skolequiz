@@ -1,12 +1,148 @@
 [
   {
+    "gender": "female",
+    "age": "45 år eller ældre",
+    "answers": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "id": 1
+  },
+  {
     "gender": "male",
+    "age": "45 år eller ældre",
+    "answers": [
+      true,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "id": 2
+  },
+  {
+    "gender": "male",
+    "age": "36-44 år",
+    "answers": [
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "id": 3
+  },
+  {
+    "gender": "female",
     "age": "35 år eller yngre",
     "answers": [
       false,
       false,
       true,
+      true,
       false,
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "id": 4
+  },
+  {
+    "gender": "male",
+    "age": "45 år eller ældre",
+    "answers": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "id": 5
+  },
+  {
+    "gender": "male",
+    "age": "35 år eller yngre",
+    "answers": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "id": 6
+  },
+  {
+    "gender": "male",
+    "age": "45 år eller ældre",
+    "answers": [
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false
+    ],
+    "id": 7
+  },
+  {
+    "gender": "male",
+    "age": "45 år eller ældre",
+    "answers": [
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "id": 8
+  },
+  {
+    "gender": "male",
+    "age": "35 år eller yngre",
+    "answers": [
+      false,
+      true,
+      false,
+      true,
       false,
       false,
       true,
@@ -14,6 +150,40 @@
       false,
       false
     ],
-    "id": 1
+    "id": 9
+  },
+  {
+    "gender": "male",
+    "age": "45 år eller ældre",
+    "answers": [
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "id": 10
+  },
+  {
+    "gender": "female",
+    "age": "35 år eller yngre",
+    "answers": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "id": 11
   }
 ]
